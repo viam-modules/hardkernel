@@ -3,11 +3,13 @@ package main
 
 import (
 	"context"
+
+	"hardkernel/odroid"
+
 	"go.viam.com/rdk/components/board"
 	"go.viam.com/rdk/logging"
 	"go.viam.com/rdk/module"
 	"go.viam.com/utils"
-	"hardkernel/odroid"
 )
 
 func main() {
