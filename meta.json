@@ -1,0 +1,19 @@
+{
+  "$schema": "https://dl.viam.dev/module.schema.json",
+  "module_id": "viam:hardkernel",
+  "visibility": "public",
+  "url": "https://github.com/viam-modules/hardkernel",
+  "description": "Go module for hardkernel odroid board, compatible with Viam",
+  "models": [
+    {
+      "api": "rdk:component:board",
+      "model": "viam:hardkernel:odroid"
+    }
+  ],
+  "build": {
+    "build": "make module",
+    "path": "bin/module.tar.gz",
+    "arch" : ["linux/arm64"]
+  },
+  "entrypoint": "bin/hardkernel"
+}
