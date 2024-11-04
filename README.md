@@ -20,7 +20,7 @@ The following attributes are available for `viam:hardkernel:odroid` boards:
 
 | Attribute | Type | Required? | Description |
 | --------- | ---- | --------- | ----------  |
-| `digital_interrupts` | object | Optional | Any digital interrupts's {{< glossary_tooltip term_id="pin-number" text="pin number" >}} and name.|
+| `digital_interrupts` | object | Optional | Any digital interrupts's pin number and name.|
 | `analogs` | object | Optional | Attributes of any pins that can be used as Analog-to-Digital Converter (ADC) inputs.|
 
 For instructions on implementing analogs, see [Analogs configuration](#Analogs-configuration). For instructions on implementing digital interrupts, see [Digital interrupt configuration](#Digital-interrupt-configuration).
