@@ -1,4 +1,4 @@
-module hardkernel
+module github.com/viam-modules/hardkernel
 
 go 1.23.0
 

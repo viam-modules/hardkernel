@@ -4,7 +4,7 @@ package main
 import (
 	"context"
 
-	"hardkernel/odroid"
+	"github.com/viam-modules/hardkernel/odroid"
 
 	"go.viam.com/rdk/components/board"
 	"go.viam.com/rdk/logging"
