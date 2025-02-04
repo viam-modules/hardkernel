@@ -9,11 +9,10 @@ Follow the [setup guide](https://docs.viam.com/installation/prepare/odroid-c4-se
 > [!NOTE]
 > Before configuring your board, you must [create a machine](https://docs.viam.com/cloud/machines/#add-a-new-machine).
 
-## Configure your odroid board
-
 Navigate to the [**CONFIGURE** tab](https://docs.viam.com/configure/) of your [machine](https://docs.viam.com/fleet/machines/) in the [Viam app](https://app.viam.com/).
 [Add board / hardkernel:odroid to your machine](https://docs.viam.com/configure/#components).
 
+## Configure your odroid board
 ### Attributes
 
 The following attributes are available for `viam:hardkernel:odroid` boards:

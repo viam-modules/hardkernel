@@ -7,7 +7,10 @@
   "models": [
     {
       "api": "rdk:component:board",
-      "model": "viam:hardkernel:odroid"
+      "model": "viam:hardkernel:odroid",
+      "markdown_link": "README.md#configure-your-odroid-board",
+      "short_description": "A board component for the hardkernel odroid board."
+
     }
   ],
   "build": {
