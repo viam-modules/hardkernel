@@ -43,7 +43,7 @@ Navigate to the [**CONFIGURE** tab](https://docs.viam.com/configure/) of your [m
   }
 ```
 
-#### Attributes
+### Attributes
 The following attributes are available for `viam:hardkernel:odroid` boards:
 
 | Attribute | Type | Required? | Description |
@@ -51,7 +51,7 @@ The following attributes are available for `viam:hardkernel:odroid` boards:
 | `digital_interrupts` | object | Optional | Any digital interrupts's pin number and name.|
 | `analogs` | object | Optional | Attributes of any pins that can be used as Analog-to-Digital Converter (ADC) inputs.|
 
-#### Analogs configuration
+### Analogs configuration
 An [analog-to-digital converter](https://www.electronics-tutorials.ws/combination/analogue-to-digital-converter.html) (ADC) takes a continuous voltage input (analog signal) and converts it to an discrete integer output (digital signal).
 
 To integrate an ADC into your machine, you must first physically connect the pins on your ADC to your board.
