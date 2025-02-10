@@ -13,8 +13,37 @@ Navigate to the [**CONFIGURE** tab](https://docs.viam.com/configure/) of your [m
 [Add board / hardkernel:odroid to your machine](https://docs.viam.com/configure/#components).
 
 ## Configure your odroid board
-### Attributes
 
+### Example configuration
+```json
+{}
+```
+
+### Example configuration with optional analogs and digital interrupts
+```json
+  {
+    "analogs": [
+      {
+      "name": "current",
+      "pin": "1",
+      "spi_bus": "1",
+      "chip_select": "0"
+      }
+    ],
+      "digital_interrupts": [
+      {
+        "name": "your-interrupt-1",
+        "pin": "15"
+      },
+      {
+        "name": "your-interrupt-2",
+        "pin": "16"
+      }
+    ]
+  }
+```
+
+#### Attributes
 The following attributes are available for `viam:hardkernel:odroid` boards:
 
 | Attribute | Type | Required? | Description |
@@ -22,28 +51,7 @@ The following attributes are available for `viam:hardkernel:odroid` boards:
 | `digital_interrupts` | object | Optional | Any digital interrupts's pin number and name.|
 | `analogs` | object | Optional | Attributes of any pins that can be used as Analog-to-Digital Converter (ADC) inputs.|
 
-For instructions on implementing analogs, see [Analogs configuration](#Analogs-configuration). For instructions on implementing digital interrupts, see [Digital interrupt configuration](#Digital-interrupt-configuration).
-
-## Example configuration
-
-### `viam:hardkernel:odroid`
-```json
-  {
-     "name": "<your-hardkernel-odroid-board-name>",
-      "model": "viam:hardkernel:odroid",
-      "type": "board",
-      "namespace": "rdk",
-      "attributes": {},
-      "depends_on": []
-  }
-```
-
-### Next Steps
-- To test your board, expand the **TEST** section of its configuration pane or go to the [**CONTROL** tab](https://docs.viam.com/fleet/control/).
-- To write code against your board, use one of the [available SDKs](https://docs.viam.com/sdks/).
-- To view examples using a board component, explore [these tutorials](https://docs.viam.com/tutorials/).
-
-## Analogs configuration
+#### Analogs configuration
 An [analog-to-digital converter](https://www.electronics-tutorials.ws/combination/analogue-to-digital-converter.html) (ADC) takes a continuous voltage input (analog signal) and converts it to an discrete integer output (digital signal).
 
 To integrate an ADC into your machine, you must first physically connect the pins on your ADC to your board.
@@ -63,11 +71,10 @@ Then, integrate `analogs` into your board by adding the following to your board'
 ]
 ```
 
-### Attributes
+#### Analog Attributes
 
 The following attributes are available for `analogs`:
 
-<!-- prettier-ignore -->
 | Name | Type | Required? | Description |
 | ---- | ---- | --------- | ----------- |
 |`name` | string | **Required** | Your name for the analog reader. |
@@ -77,7 +84,7 @@ The following attributes are available for `analogs`:
 | `average_over_ms` | int | Optional | Duration in milliseconds over which the rolling average of the analog input should be taken. |
 |`samples_per_sec` | int | Optional | Sampling rate of the analog input in samples per second. |
 
-## Example configuration
+#### Example configuration
 
 ```json {class="line-numbers linkable-line-numbers"}
 {
@@ -108,7 +115,7 @@ The following attributes are available for `analogs`:
 }
 ```
 
-## Digital interrupt configuration
+### Digital interrupt configuration
 [Interrupts](https://en.wikipedia.org/wiki/Interrupt) are a method of signaling precise state changes.
 Configuring digital interrupts to monitor GPIO pins on your board is useful when your application needs to know precisely when there is a change in GPIO value between high and low.
 
@@ -129,17 +136,17 @@ Integrate `digital_interrupts` into your machine in the `attributes` of your boa
 }
 ```
 
-### Attributes
+#### Digital Interrupt Attributes
 
 The following attributes are available for `digital_interrupts`:
 
-<!-- prettier-ignore -->
+
 | Name | Type | Required? | Description |
 | ---- | ---- | --------- | ----------- |
 |`name` | string | **Required** | Your name for the digital interrupt. |
 |`pin`| string | **Required** | The pin number of the board's GPIO pin that you wish to configure the digital interrupt for. |
 
-### Example configuration
+#### Example configuration
 
 ```json {class="line-numbers linkable-line-numbers"}
 {
@@ -165,3 +172,8 @@ The following attributes are available for `digital_interrupts`:
   ]
 }
 ```
+
+## Next Steps
+- To test your board, expand the **TEST** section of its configuration pane or go to the [**CONTROL** tab](https://docs.viam.com/fleet/control/).
+- To write code against your board, use one of the [available SDKs](https://docs.viam.com/sdks/).
+- To view examples using a board component, explore [these tutorials](https://docs.viam.com/tutorials/).
