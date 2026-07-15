@@ -19,10 +19,11 @@ const modelName = "odroid"
 var Model = resource.NewModel("viam", "hardkernel", "odroid")
 
 func init() {
-	gpioMappings, err := genericlinux.GetGPIOBoardMappings(modelName, boardInfoMappings)
+	logger := logging.NewLogger("odroid")
+	gpioMappings, err := genericlinux.GetGPIOBoardMappings(modelName, boardInfoMappings, logger)
 	var noBoardErr genericlinux.NoBoardFoundError
 	if errors.As(err, &noBoardErr) {
-		logging.Global().Debugw("error getting odroid GPIO board mapping", "error", err)
+		logger.Debugw("error getting odroid GPIO board mapping", "error", err)
 	}
 
 	resource.RegisterComponent(
