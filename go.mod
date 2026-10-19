@@ -8,8 +8,8 @@ require (
 	github.com/edaniels/golinters v0.0.5-0.20220906153528-641155550742
 	github.com/fullstorydev/grpcurl v1.8.6
 	github.com/rhysd/actionlint v1.7.8
-	go.viam.com/rdk v1.10.0
-	go.viam.com/utils v0.13.0
+	go.viam.com/rdk v1.11.0
+	go.viam.com/utils v0.13.2
 	gotest.tools/gotestsum v1.12.2
 )
 
